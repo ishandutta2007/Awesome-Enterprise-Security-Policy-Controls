@@ -67,9 +67,9 @@ The table below lists industry-leading enterprise SaaS platforms for identity go
 
 ## 🔓 Open-Source GitHub Projects
 
-Self-hosted and open-source control planes provide cryptographic auditability, data sovereignty, and freedom from per-seat enterprise licensing. The table below lists active, high-impact open-source security policy projects, sorted descending by **GitHub Stars**.
+Self-hosted and open-source control planes provide cryptographic auditability, data sovereignty, and freedom from per-seat enterprise licensing. The table below lists active, high-impact open-source security policy projects, sorted descending by **GitHub_Stars**.
 
-| Repository & Project | GitHub Stars (Live Badge) | Primary License | Core Policy & Security Functionality |
+| Repository & Project | GitHub_Stars (Live Badge) | Primary License | Core Policy & Security Functionality |
 |:---|:---:|:---:|:---|
 | **[Keycloak](https://github.com/keycloak/keycloak)** | [![Stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Apache-2.0 | Centralized enterprise OpenID Connect (OIDC) and SAML 2.0 identity provider with fine-grained authorization policies, Kerberos/LDAP user federation, and multi-factor authentication (MFA). |
 | **[Authelia](https://github.com/authelia/authelia)** | [![Stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Apache-2.0 | Lightweight authentication and authorization forward-auth proxy companion supporting 2FA (FIDO2 WebAuthn, TOTP, Duo) and granular policy enforcement per domain/path. |
@@ -123,8 +123,8 @@ Contributions are warmly encouraged! Help keep this curated registry fresh, accu
 2. 🌿 **Create a descriptive feature branch**: `git checkout -b feature/add-new-control-plane`.
 3. 📝 **Add or update entries in `README.md`**:
    * Ensure any SaaS entry includes accurate pricing and explicit trial parameters.
-   * Ensure any Open-Source entry includes the standard live shields star badge (`https://img.shields.io/github/stars/{owner}/{repo}?style=social&color=white`) linking to its stargazers page.
-   * Maintain sorted order (valuation for SaaS, stars for OSS).
+   * Ensure any Open-Source entry includes the standard live shields Stars_Badge (`https://img.shields.io/github/stars/{owner}/{repo}?style=social&color=white`) linking to its stargazers page.
+   * Maintain sorted order (valuation for SaaS, GitHub_Stars for OSS).
 4. ✅ **Ensure markdown formatting and links** are cleanly tested.
 5. 🚀 **Submit a Pull Request (PR)** with a concise rationale detailing the project.
 
