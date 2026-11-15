@@ -1,72 +1,159 @@
-# Awesome-Enterprise-Security-Policy-Controls
+<div align="center">
 
-## Top Enterprise Security Policy Controls Ecosystem
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Enterprise Security Policy Controls Banner" width="100%" />
+</p>
 
-**Curated List of SaaS Platforms & Open-Source GitHub Projects**  
-*Focused on Conditional Access, Identity Governance & Self-Hosted Zero Trust Control Planes*  
-**Last updated: March 2026**
+# 🛡️ Awesome Enterprise Security Policy Controls
 
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Enterprise Security Policy Controls**. These tools help organizations enforce access policies, govern identities, and secure privileged sessions—covering everything from conditional access engines and identity governance platforms to zero-trust network access and self-hosted policy control planes.
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ishandutta2007/Awesome-Enterprise-Security-Policy-Controls/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/ishandutta2007/Awesome-Enterprise-Security-Policy-Controls/graphs/commit-activity)
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
-**Examples** include Microsoft Entra Conditional Access, Okta Identity Governance, SailPoint IdentityIQ, CyberArk, BeyondTrust, HashiCorp Boundary, Cloudflare One, Zscaler Internet Access, and open-source alternatives like Apache Syncope and Octelium (the category leaders).
+<p align="center">
+  <strong>A curated directory of enterprise-grade SaaS platforms and open-source control planes for Zero Trust Architecture (ZTA), Conditional Access, Identity Governance &amp; Administration (IGA), and Privileged Access Management (PAM).</strong>
+</p>
 
-**Open-source emphasis**: This section highlights every major active project for self-hosted identity governance, open-source zero-trust access, and community-driven policy enforcement—ideal for organizations seeking data sovereignty and avoiding per-user or per-application licensing. The open-source landscape is genuinely functional: **Apache Syncope** provides enterprise IGA with provisioning and audit capabilities , **Octelium** delivers a zero-trust, secretless access platform with OPA policy-as-code , and **HashiCorp Boundary** brokers credentialless access with dynamic secret injection from Vault .
+<p align="center">
+  <a href="#-sector-overview--market-dynamics">Sector Overview</a> •
+  <a href="#-saashosted-platforms">SaaS Platforms</a> •
+  <a href="#-open-source-github-projects">Open-Source Projects</a> •
+  <a href="#-key-comparison-summary">Comparison Matrix</a> •
+  <a href="#-how-to-contribute">Contributing</a> •
+  <a href="#-star-history">Star History</a> •
+  <a href="#-support--sponsorship">Support</a>
+</p>
 
-Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-products)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-| Product | Description | Pricing (Starting) | Free Tier / Trial Limits |
-|---------|-------------|-------------------|--------------------------|
-| **[Microsoft Entra Conditional Access](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id)** | **The identity-driven policy engine for Microsoft estates.** Evaluates user risk, device compliance, IP location, and application context to enforce if-then access decisions after authentication [citation:3]. Three-tier Zero Trust model: Basic (MFA + app protection for BYOD), Enhanced (risk-based + device compliance), High (managed devices only, password reset for risky sign-ins) [citation:3]. **Requires Entra ID P1/P2 licensing** for Conditional Access policies [citation:3]. | P1: **$6/user/month**; P2: **$9/user/month** (includes Identity Protection) | Free edition includes security defaults (no Conditional Access); P1/P2 required for granular policies |
-| **[Okta Identity Governance](https://www.okta.com/)** | **Real-time, risk-triggered access certifications.** Combines Identity Threat Protection with Workflows to fire micro-campaigns the moment a user's risk score elevates—no waiting for quarterly reviews [citation:2]. **Identity Reconciliation** detects entitlement drift and rogue accounts created outside Okta; **Resource Collections** bundle baseline access per role; **Intra-app SoD for groups** blocks toxic combinations before approval [citation:14]. | Quote-only (Workforce + Governance add-on) | No free tier; developer edition available |
-| **[SailPoint IdentityIQ](https://www.sailpoint.com/)** | **Industry-leading IGA for complex hybrid enterprises.** Centralizes identity governance across legacy, cloud, and on-prem systems. **Automated Joiner-Mover-Leaver workflows**, **access certifications with risk scoring**, **Separation of Duties enforcement**, and **audit-ready governance trails** [citation:5]. Connectors via REST, SCIM, JDBC, CSV, and LDAP [citation:5]. | Quote-only (enterprise contract) | No free tier; demo via sales |
-| **[CyberArk](https://www.cyberark.com/)** | **Privileged access security with session isolation and threat analytics.** Phased maturity model: "go wide" (vault built-in accounts, rotate, isolate sessions) then "go deep" (manage service accounts, application IDs, remove hardcoded credentials, enforce least privilege) [citation:4]. **Privileged Session Manager** isolates and monitors privileged sessions; **Privileged Threat Analytics** detects anomalous behavior [citation:4]. | Quote-only (enterprise contract) | No free tier; demo via sales |
-| **[BeyondTrust](https://www.beyondtrust.com/)** | **Unified privileged access with zero trust and credential injection.** **Total PASM+** combines Password Safe (vaulting + rotation), Privileged Remote Access (RDP/SSH/web), and Identity Security Insights (risk visibility across domains) [citation:10]. **Credential injection** ensures end users never see passwords; **session monitoring and recording** for audit [citation:10]. | Quote-only (enterprise contract) | No free tier; demo via sales |
-| **[HashiCorp Boundary](https://www.hashicorp.com/)** | **Identity-based secure remote access without distributing credentials.** Users authenticate via IdP; Boundary authorizes access to specific targets and can **broker or inject dynamic credentials from Vault** [citation:6]. **Brokered credentials** are shown at session start; **injected credentials** are never visible to the user—the session uses them transparently [citation:6]. SSH certificates, LDAP secrets, and generic KV secrets supported [citation:6]. | Quote-only (HCP Boundary or Boundary Enterprise) | **Boundary Community Edition** free to self-host (Business Source License); session recording and credential injection require paid tiers |
-| **[Cloudflare One](https://www.cloudflare.com/)** | **SASE platform with Zero Trust access, SWG, DLP, and RBI.** Replaces legacy perimeters with a unified control plane [citation:8]. Products include **Cloudflare Access** (identity-aware proxy), **Tunnel** (outbound-only connections), **CASB**, **DLP**, and **Remote Browser Isolation** [citation:8]. | Quote-only (enterprise contract) | Free tier available for small teams; Enterprise via sales |
-| **[Zscaler Internet Access](https://www.zscaler.com/)** | **Cloud-native SWG with inline SSL inspection, AI-powered threat protection, and data protection.** 100% cloud-delivered with 99.999% availability SLA and <100ms proxy latency [citation:7]. **Data privacy**: content never written to disk; granular RBAC for logging; six-month or less retention by default [citation:7]. | Quote-only (edition-based: Essentials, Business, Transformation, Unlimited) | No free tier; demo via sales |
-
-## Open-Source GitHub Projects
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[Apache Syncope](https://github.com/apache/syncope)** | [![Stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers) | **The most complete open-source IGA platform for enterprise identity governance.** Apache-2.0. **Centralized IAM with user/group/role management, automated provisioning and deprovisioning workflows, RBAC, delegated administration, and audit logging** [citation:11]. **Supports LDAP, Active Directory, databases, SAML 2.0, OIDC, and SCIM** standards [citation:11]. **REST APIs** for integration and automation. Web-based admin console. **Best for organizations wanting open-source IGA** with provisioning and compliance reporting without per-identity licensing . |
-| **[Octelium](https://github.com/octelium/octelium)** | [![Stars](https://img.shields.io/github/stars/octelium/octelium?style=social&color=white)](https://github.com/octelium/octelium/stargazers) | **Self-hosted zero-trust access platform with secretless access and policy-as-code.** **No notion of an "admin" user**—zero standing privileges by default . **Layer-7 awareness** enables access to HTTP APIs, SSH, Kubernetes, and PostgreSQL/MySQL **without exposing or distributing secrets** . **Policy-as-code with CEL and OPA** for per-request, attribute-based access control . **OpenTelemetry-native auditing**—every request logged and exported to SIEM . **FIDO2/WebAuthn, TOTP, and TPM 2.0** authentication built in . **Best for teams wanting a modern, Kubernetes-native zero-trust access plane** without commercial licensing . |
-| **[HashiCorp Boundary (Community)](https://github.com/hashicorp/boundary)** | [![Stars](https://img.shields.io/github/stars/hashicorp/boundary?style=social&color=white)](https://github.com/hashicorp/boundary/stargazers) | **Identity-based secure remote access with credential brokering.** Community Edition free to self-host. Users authenticate via IdP; Boundary authorizes access to specific targets. Integrates with Vault for **dynamic, short-lived credentials**—database passwords, SSH certificates, and LDAP secrets generated per session and revoked on close [citation:6]. **Session recording and credential injection require paid tiers** (Business Source License, not OSI open source) . **Best for teams already using HashiCorp Vault** wanting just-in-time access without distributing static credentials . |
-| **[Authelia](https://github.com/authelia/authelia)** | [![Stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | **Open-source authentication and authorization server with 2FA and SSO for web applications.** Lightweight companion for protecting internal services behind a reverse proxy. **Best for homelabs and small teams** needing policy enforcement without a full IGA platform . |
-
-### Additional Strong Open-Source Options
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[Ory Polis (BoxyHQ Jackson)](https://github.com/ory/polis)** | [![Stars](https://img.shields.io/github/stars/ory/polis?style=social&color=white)](https://github.com/ory/polis/stargazers) | **Enterprise SSO service bridging SAML/OIDC to OAuth 2.0 with SCIM 2.0 directory sync.** **Best for SaaS products needing to accept enterprise customer IdPs** without building SAML parsing from scratch . |
-| **[Teleport (Community)](https://github.com/gravitational/teleport)** | [![Stars](https://img.shields.io/github/stars/gravitational/teleport?style=social&color=white)](https://github.com/gravitational/teleport/stargazers) | **Identity-aware access for SSH, Kubernetes, databases, and apps.** Replaces bastion hosts and shared SSH keys with certificate-based, short-lived access. **Community Edition free to self-host** (some features gated to paid tiers) . **Best for DevOps teams** wanting just-in-time infrastructure access . |
-
-**Frameworks for building custom systems**: Choose **Apache Syncope** for enterprise IGA with provisioning, RBAC, and audit , **Octelium** for zero-trust, secretless access with OPA policy-as-code , or **HashiCorp Boundary** for credential-brokered remote access integrated with Vault —all without per-identity or per-application commercial licensing.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Security policy controls govern access to critical systems and privileged credentials; **policy misconfigurations can either block legitimate business or create security gaps**. Test policies in report-only/audit mode before enforcement.
-- **Enterprise policy control platforms are quote-only and deeply gated by licensing tiers.** **Microsoft Entra Conditional Access requires P1/P2** ($6–$9/user/month)—the free tier lacks granular policies entirely [citation:3]. **Okta Identity Governance is an add-on** to Workforce with quote-only pricing . **SailPoint, CyberArk, and BeyondTrust are enterprise contracts** with no public rates. **Open-source alternatives have different trade-offs**: **Apache Syncope** provides IGA fundamentals (provisioning, RBAC, audit) but lacks the AI-driven risk scoring and peer-group analysis of SailPoint [citation:5][citation:11]. **Octelium** offers modern zero-trust with secretless access and OPA policies, but is newer and Kubernetes-centric . **HashiCorp Boundary Community is free** but session recording and credential injection require paid tiers—and the Business Source License is not OSI open source . **Validate whether you need IGA (Syncope), zero-trust access (Octelium, Boundary), or conditional access (Entra)** before committing.
+</div>
 
 ---
 
-**Made for identity architects, security engineers, and organizations building policy-driven access control.**  
-Let's make enterprise security policy controls more open, least-privileged, and auditable.
+## 🧭 Overview & Core Architecture
+
+Enforcing access policy across sprawling multi-cloud environments, on-premises datacenters, and SaaS applications requires a robust **Security Policy Control Plane**. Modern enterprise security policy controls shift away from static perimeter network defenses toward continuous, context-aware authorization.
+
+Key disciplines covered in this ecosystem:
+* 🔑 **Conditional Access & Context-Aware Authorization**: Dynamically inspecting user risk score, device posture, geographic anomaly, and session sensitivity at request time.
+* 👥 **Identity Governance & Administration (IGA)**: Automated Joiner-Mover-Leaver (JML) provisioning, continuous entitlement reconciliation, Separation of Duties (SoD), and auditable certification campaigns.
+* 🔐 **Privileged Access Management (PAM) & Credential Brokering**: Just-in-Time (JIT) ephemeral credential brokering, secretless session proxying, and comprehensive session recording.
+* 🌐 **Zero Trust Network Access (ZTNA) & Secure Service Edge (SSE)**: Identity-aware layer-7 reverse proxying and egress traffic inspection replacing legacy corporate VPN concentrators.
+
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+> The global Identity and Access Management (IAM) and Enterprise Policy Control market is valued between **$22B and $33B**, growing at a ~12–14% CAGR through 2030. The sector is **moderately fragmented**: mega-cap hyper-scalers (Microsoft) and specialized security giants (Cloudflare, Okta, Zscaler, CyberArk) command major market shares, yet continuous demand for specialized identity governance, zero-trust edge proxies, and open-source sovereignty prevents a single "winner-take-all" outcome.
+
+---
+
+## ☁️ SaaS/Hosted Platforms
+
+The table below lists industry-leading enterprise SaaS platforms for identity governance, conditional access enforcement, and zero trust policies. Entries are sorted descending by **Company Scale (Market Capitalization / Corporate Valuation)**.
+
+| Product | Company Scale (Valuation / Revenue) | Starting Pricing (Specific Tier) | Free Tier / Free Trial Limits | Primary Control Scope |
+|:---|:---|:---|:---|:---|
+| **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id)** | **~$3.89 Trillion** Market Cap (~$331.8B Annual Rev) | **$6.00 / user / month** (Entra ID P1); **$9.00 / user / month** (Entra ID P2 with risk-based policies) | **30-day free trial** of Entra ID P2 (up to 100 licenses). The permanent Free tier provides standard SSO and security defaults, but completely omits granular Conditional Access policies. | Conditional Access, MFA rules, risk-based access, device compliance |
+| **[Cloudflare One](https://www.cloudflare.com/products/zero-trust/)** | **~$108 Billion** Market Cap (~$2.73B Annual Rev) | **$7.00 / user / month** (Standard Pay-as-you-go Plan) | **Free forever plan for up to 50 active users** with ZTNA application access, DNS Secure Web Gateway, 2 SaaS CASB integrations, and 24h log retention. | Zero Trust Network Access (ZTNA), Secure Web Gateway, SWG & CASB policies |
+| **[Okta Identity Governance](https://www.okta.com/products/identity-governance/)** | **~$31.5 Billion** Market Cap (~$3.07B Annual Rev) | **$17.00 / user / month** (Essentials suite with Access Governance & Workflows); or ~$9–$11/user add-on | **30-day full-access free trial** for up to 10 active users and 1 admin; automatically converts to permanent Free Plan with basic SSO/MFA (governance workflows disabled). | Real-time entitlement reviews, automated access requests, lifecycle management |
+| **[Zscaler Internet Access](https://www.zscaler.com/products/zscaler-internet-access)** | **~$31.2 Billion** Market Cap (~$2.80B Annual Rev) | **$200.00 / user / year** (~$16.67/user/mo starting enterprise bundle, 50-seat min) | **No self-service free tier.** Guided vendor Proof of Concept (PoC) scoped for **30 to 60 days**; standalone 30-day trial for Advanced Cloud Sandbox module. | Inline SSL inspection, cloud-native SWG, DLP policies, contextual zero trust |
+| **[CyberArk Privilege Cloud](https://www.cyberark.com/products/privileged-access-manager/)** | **~$21.1 Billion** Valuation (Acquired by Palo Alto Networks; ~$1.3B ARR) | **$910.00 / user / year** (~$75.83/user/mo for Standard SaaS User, starting packs) | **No self-service free tier.** Scoped enterprise Proof of Concept (PoC) available through sales engineers for **30 days** across a target pool of test identities. | Privileged credential vaulting, session isolation (PSM), threat analytics |
+| **[SailPoint Identity Security](https://www.sailpoint.com/)** | **~$11.8 Billion** Market Cap (~$1.16B Annual Rev) | **$30.00 / identity / year** (~$2.50/identity/mo baseline tier, ~$75k minimum contract) | **No public free tier.** Enterprise Proof of Concept (PoC) scoped through sales/partners for **30 to 90 days** for 500–1,000 managed test identities. | Enterprise IGA, Joiner-Mover-Leaver automation, Separation of Duties (SoD) |
+| **[HashiCorp Boundary](https://www.hashicorp.com/products/boundary)** | **~$6.4 Billion** Valuation (Acquired by IBM; ~$650M Annual Rev) | **$23.96 / user / month** (HCP Boundary Essentials Edition); Standard is $47.92/user/mo | **$500 free trial credits** on HashiCorp Cloud Platform (HCP) valid for up to **30 days**. Alternatively, Boundary Community Edition is 100% free to self-host. | Credentialless secure remote access, dynamic Vault secret injection |
+| **[BeyondTrust Privileged Access](https://www.beyondtrust.com/)** | **~$1.5+ Billion** Private Valuation (~$500M ARR, Clearlake Capital) | **$500.00 / user / year** (~$41.67/user/mo for Privileged Remote Access base seat) | **14-day free trial** for Privileged Remote Access and Remote Support modules (limited to test endpoints). Password Safe requires sales-led guided PoC. | Privileged remote session proxying, credential injection, endpoint privilege |
+
+---
+
+## 🔓 Open-Source GitHub Projects
+
+Self-hosted and open-source control planes provide cryptographic auditability, data sovereignty, and freedom from per-seat enterprise licensing. The table below lists active, high-impact open-source security policy projects, sorted descending by **GitHub Stars**.
+
+| Repository & Project | GitHub Stars (Live Badge) | Primary License | Core Policy & Security Functionality |
+|:---|:---:|:---:|:---|
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![Stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Apache-2.0 | Centralized enterprise OpenID Connect (OIDC) and SAML 2.0 identity provider with fine-grained authorization policies, Kerberos/LDAP user federation, and multi-factor authentication (MFA). |
+| **[Authelia](https://github.com/authelia/authelia)** | [![Stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Apache-2.0 | Lightweight authentication and authorization forward-auth proxy companion supporting 2FA (FIDO2 WebAuthn, TOTP, Duo) and granular policy enforcement per domain/path. |
+| **[Authentik](https://github.com/goauthentik/authentik)** | [![Stars](https://img.shields.io/github/stars/goauthentik/authentik?style=social&color=white)](https://github.com/goauthentik/authentik/stargazers) | GPL-3.0-or-later | Versatile identity provider integrating dynamic policy-based execution flows, Stage bindings, SCIM directory synchronization, and out-of-the-box forward auth proxy support. |
+| **[Teleport](https://github.com/gravitational/teleport)** | [![Stars](https://img.shields.io/github/stars/gravitational/teleport?style=social&color=white)](https://github.com/gravitational/teleport/stargazers) | AGPL-3.0 / Commercial | Identity-aware zero-trust access gateway for SSH clusters, Kubernetes nodes, databases, and internal web applications utilizing short-lived cryptographic X.509/SSH certificates. |
+| **[Open Policy Agent (OPA)](https://github.com/open-policy-agent/opa)** | [![Stars](https://img.shields.io/github/stars/open-policy-agent/opa?style=social&color=white)](https://github.com/open-policy-agent/opa/stargazers) | Apache-2.0 | General-purpose policy engine enforcing declarative Policy-as-Code across microservices, Kubernetes admission webhooks, CI/CD pipelines, and API gateways using the Rego query language. |
+| **[Casdoor](https://github.com/casdoor/casdoor)** | [![Stars](https://img.shields.io/github/stars/casdoor/casdoor?style=social&color=white)](https://github.com/casdoor/casdoor/stargazers) | Apache-2.0 | Modern UI-driven IAM / SSO platform supporting OAuth 2.0, OIDC, SAML, CAS, and fine-grained RBAC/ABAC Casbin access control enforcement with multi-tenant isolation. |
+| **[Cerbos](https://github.com/cerbos/cerbos)** | [![Stars](https://img.shields.io/github/stars/cerbos/cerbos?style=social&color=white)](https://github.com/cerbos/cerbos/stargazers) | Apache-2.0 | Scalable authorization sidecar engine that decouples role- and attribute-based access control (RBAC/ABAC) logic into human-readable YAML policy definitions with millisecond latency. |
+| **[HashiCorp Boundary](https://github.com/hashicorp/boundary)** | [![Stars](https://img.shields.io/github/stars/hashicorp/boundary?style=social&color=white)](https://github.com/hashicorp/boundary/stargazers) | BSL 1.1 | Identity-governed secure remote access plane brokering ephemeral connections to private endpoints and integrating directly with HashiCorp Vault for dynamic credential retrieval. |
+| **[BoxyHQ Jackson (SAML Jackson)](https://github.com/boxyhq/jackson)** | [![Stars](https://img.shields.io/github/stars/boxyhq/jackson?style=social&color=white)](https://github.com/boxyhq/jackson/stargazers) | Apache-2.0 | Enterprise SSO and directory sync middleware connecting SAML 2.0 / OIDC identity providers to OAuth 2.0 flows with SCIM 2.0 automated provisioning support. |
+| **[Octelium](https://github.com/octelium/octelium)** | [![Stars](https://img.shields.io/github/stars/octelium/octelium?style=social&color=white)](https://github.com/octelium/octelium/stargazers) | AGPL-3.0 | Modern Kubernetes-native zero-trust access plane providing secretless layer-7 connectivity, zero standing privileges, and continuous Policy-as-Code evaluation via Common Expression Language (CEL). |
+| **[Apache Syncope](https://github.com/apache/syncope)** | [![Stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers) | Apache-2.0 | Complete open-source Identity Governance & Administration (IGA) framework managing identity lifecycle, provisioning to Active Directory / LDAP / SQL, and compliance audit reporting. |
+
+---
+
+## 🎯 Key Comparison Summary
+
+```
+                      ENTERPRISE POLICY CONTROL LANDSCAPE
+ ┌────────────────────────────────────────────────────────────────────────┐
+ │                                                                        │
+ │   CONDITIONAL ACCESS & SSO          IDENTITY GOVERNANCE (IGA)          │
+ │   • Microsoft Entra ID (P1/P2)      • SailPoint Identity Security      │
+ │   • Okta Workforce Identity         • Okta Identity Governance (OIG)   │
+ │   • Keycloak / Authentik (OSS)      • Apache Syncope (OSS)             │
+ │                                                                        │
+ │   ZERO TRUST EDGE & SASE            PRIVILEGED ACCESS & PAM            │
+ │   • Cloudflare One / Access         • CyberArk Privilege Cloud         │
+ │   • Zscaler Internet Access (ZIA)   • BeyondTrust Privileged Access    │
+ │   • Teleport (OSS)                  • HashiCorp Boundary (OSS/Cloud)   │
+ │                                     • Octelium (Secretless OSS)        │
+ │                                                                        │
+ │   POLICY-AS-CODE ENGINES                                               │
+ │   • Open Policy Agent (OPA / Rego)                                     │
+ │   • Cerbos (YAML ABAC / RBAC)                                          │
+ │                                                                        │
+ └────────────────────────────────────────────────────────────────────────┘
+```
+
+* **When to choose IGA (SailPoint / Apache Syncope)**: When compliance mandates strict segregation of duties (SoD), quarterly entitlement certification campaigns, and automated multi-system provisioning across legacy systems and databases.
+* **When to choose Zero-Trust PAM (Boundary / Teleport / Octelium)**: When your goal is eliminating static SSH keys, VPN concentrators, and database credentials in favor of short-lived tokens and secretless proxy channels.
+* **When to choose Policy-as-Code (OPA / Cerbos)**: When microservices or application backends need high-throughput, decoupled authorization logic checked continuously at sub-millisecond speeds.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are warmly encouraged! Help keep this curated registry fresh, accurate, and valuable for security architects worldwide.
+
+1. 🍴 **Fork the repository** to your personal GitHub account.
+2. 🌿 **Create a descriptive feature branch**: `git checkout -b feature/add-new-control-plane`.
+3. 📝 **Add or update entries in `README.md`**:
+   * Ensure any SaaS entry includes accurate pricing and explicit trial parameters.
+   * Ensure any Open-Source entry includes the standard live shields star badge (`https://img.shields.io/github/stars/{owner}/{repo}?style=social&color=white`) linking to its stargazers page.
+   * Maintain sorted order (valuation for SaaS, stars for OSS).
+4. ✅ **Ensure markdown formatting and links** are cleanly tested.
+5. 🚀 **Submit a Pull Request (PR)** with a concise rationale detailing the project.
+
+---
+
+## ⚠️ Disclaimer
+
+* This repository is an independent, community-driven informational registry and is not sponsored, endorsed, or affiliated with any listed vendor.
+* Product specifications, subscription tiers, and corporate metrics are sourced from publicly available documentation and market filings. Always verify terms directly with individual vendors.
+* Security policy controls govern access to mission-critical infrastructure. Always test conditional access rules and authorization configurations in non-blocking audit/report-only modes before enforcing them globally in production.
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Enterprise-Security-Policy-Controls&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Enterprise-Security-Policy-Controls&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsorship
+
+If this curated guide saves you time or helps your security architecture research, please consider supporting the project:
+
+* ⭐ **Star this repository** to improve visibility on GitHub.
+* 🍴 **Fork and share** with fellow security architects and DevOps teams.
+* ☕ **Buy a coffee & sponsor ongoing research**: [**GitHub Sponsor Dashboard**](https://github.com/sponsors/ishandutta2007).
+
+---
+
+<div align="center">
+  <sub>Maintained with ❤️ by <a href="https://github.com/ishandutta2007">Ishan Dutta</a> and the global open-source cybersecurity community.</sub>
+</div>

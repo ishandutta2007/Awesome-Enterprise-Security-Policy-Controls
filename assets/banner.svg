@@ -1,0 +1,179 @@
+<svg width="100%" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.9" />
+    </linearGradient>
+
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-violet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.6"/>
+    </pattern>
+
+    <style>
+      .glow-pulse-1 {
+        animation: pulse1 6s ease-in-out infinite alternate;
+      }
+      .glow-pulse-2 {
+        animation: pulse2 7s ease-in-out infinite alternate;
+      }
+      .data-stream {
+        stroke-dasharray: 8 16;
+        animation: streamFlow 12s linear infinite;
+      }
+      .signal-beacon {
+        animation: beaconPing 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        transform-origin: center;
+      }
+      .float-badge {
+        animation: badgeFloat 5s ease-in-out infinite alternate;
+      }
+
+      @keyframes pulse1 {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+        100% { transform: scale(1.25) translate(40px, -20px); opacity: 0.65; }
+      }
+      @keyframes pulse2 {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+        100% { transform: scale(1.3) translate(-30px, 30px); opacity: 0.6; }
+      }
+      @keyframes streamFlow {
+        from { stroke-dashoffset: 200; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes beaconPing {
+        0% { r: 4px; opacity: 1; }
+        75%, 100% { r: 16px; opacity: 0; }
+      }
+      @keyframes badgeFloat {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-8px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bg-grad)"/>
+  <rect width="1200" height="420" rx="16" fill="url(#grid)" />
+
+  <!-- Animated Glowing Ambience (Positioned in Background) -->
+  <circle cx="220" cy="110" r="220" fill="url(#glow-cyan)" class="glow-pulse-1" />
+  <circle cx="980" cy="310" r="260" fill="url(#glow-violet)" class="glow-pulse-2" />
+
+  <!-- Dynamic Circuit / Policy Path Lines -->
+  <g opacity="0.45">
+    <path d="M 0 160 L 250 160 L 320 230 L 880 230 L 950 160 L 1200 160" stroke="#0ea5e9" stroke-width="1.5" class="data-stream" fill="none" />
+    <path d="M 0 280 L 180 280 L 260 340 L 940 340 L 1020 280 L 1200 280" stroke="#8b5cf6" stroke-width="1.5" class="data-stream" fill="none" />
+  </g>
+
+  <!-- Foreground Shield Emblem & Header Icons -->
+  <g transform="translate(60, 65)">
+    <!-- Security Shield -->
+    <path d="M 45 10 L 82 26 C 82 56 68 85 45 98 C 22 85 8 56 8 26 Z" fill="#0f172a" stroke="url(#accent-cyan)" stroke-width="3"/>
+    <path d="M 45 22 L 72 35 C 72 58 60 78 45 88 C 30 78 18 58 18 35 Z" fill="#1e293b" opacity="0.6"/>
+    <!-- Lock Hook & Body inside Shield -->
+    <rect x="36" y="50" width="18" height="15" rx="3" fill="#06b6d4" />
+    <path d="M 39 50 V 42 C 39 38 51 38 51 42 V 50" stroke="#06b6d4" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="45" cy="56" r="2" fill="#0f172a"/>
+  </g>
+
+  <!-- Animated Signal Beacons -->
+  <circle cx="105" cy="125" r="4" fill="#06b6d4" />
+  <circle cx="105" cy="125" r="4" stroke="#06b6d4" stroke-width="2" fill="none" class="signal-beacon" />
+
+  <!-- Main Titles (Foreground, High Contrast, Guaranteed Legibility) -->
+  <g transform="translate(170, 100)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.5" fill="#ffffff">
+      Awesome Enterprise Security Policy Controls
+    </text>
+    <text y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#94a3b8">
+      Zero Trust Architecture • Conditional Access Engines • Identity Governance &amp; Administration
+    </text>
+    <text y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748b">
+      Curated ecosystem of SaaS leaders &amp; self-hosted open-source control planes
+    </text>
+  </g>
+
+  <!-- Foreground Feature Badges / Highlights -->
+  <g transform="translate(170, 215)" class="float-badge">
+    <!-- Badge 1: Zero Trust Access -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="42" rx="21" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <circle cx="22" cy="21" r="6" fill="#10b981"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Zero Trust Access</text>
+    </g>
+
+    <!-- Badge 2: Policy-as-Code -->
+    <g transform="translate(225, 0)">
+      <rect width="200" height="42" rx="21" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <circle cx="22" cy="21" r="6" fill="#06b6d4"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Policy-as-Code (OPA/CEL)</text>
+    </g>
+
+    <!-- Badge 3: Identity Governance -->
+    <g transform="translate(440, 0)">
+      <rect width="220" height="42" rx="21" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <circle cx="22" cy="21" r="6" fill="#8b5cf6"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Identity Governance (IGA)</text>
+    </g>
+
+    <!-- Badge 4: Privileged Access -->
+    <g transform="translate(675, 0)">
+      <rect width="240" height="42" rx="21" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <circle cx="22" cy="21" r="6" fill="#ec4899"/>
+      <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Privileged Session Brokering</text>
+    </g>
+  </g>
+
+  <!-- Interactive Terminal / Verification Metric Strip -->
+  <g transform="translate(60, 290)">
+    <rect width="1080" height="85" rx="12" fill="url(#card-grad)" stroke="#374151" stroke-width="1"/>
+    
+    <g transform="translate(30, 26)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#38bdf8">EVALUATION METRIC:</text>
+      <text y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Continuous Context-Aware Verification</text>
+    </g>
+
+    <line x1="370" y1="15" x2="370" y2="70" stroke="#374151" stroke-width="1"/>
+
+    <g transform="translate(400, 26)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#a855f7">CONTROL PLANE:</text>
+      <text y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Self-Hosted Open Source &amp; Enterprise SaaS</text>
+    </g>
+
+    <line x1="780" y1="15" x2="780" y2="70" stroke="#374151" stroke-width="1"/>
+
+    <g transform="translate(810, 26)">
+      <text font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#34d399">GOVERNANCE &amp; AUDIT:</text>
+      <text y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc">100% Cryptographic Audit Trails</text>
+    </g>
+  </g>
+
+  <!-- Outer Border Stroke -->
+  <rect x="0.5" y="0.5" width="1199" height="419" rx="15.5" stroke="#334155" stroke-opacity="0.8" fill="none"/>
+</svg>
