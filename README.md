@@ -1,6 +1,6 @@
 # Awesome-Enterprise-Security-Policy-Controls
 
-# Top Enterprise Security Policy Controls Ecosystem
+## Top Enterprise Security Policy Controls Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on Conditional Access, Identity Governance & Self-Hosted Zero Trust Control Planes*  
